@@ -27,10 +27,12 @@ console.log(replaceCSSComments('код /*к1*/ без /* к2 */ коммент/*
  * Найдите и удалите все комментарии HTML.
  * Функция получает строку, возвращает преобразованную строку.
  */
-
-// console.log(replaceHTMLComments('<!--коммент1--> код без комментов <!--коммент2-->')); // код без комментов
-// console.log(replaceHTMLComments('<!--к1--> код <!-- к2 --><!-- к3 --> без <!-- к4 --> комментов')); // код без комментов
-// console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комментов')); // код без комментов
+function replaceHTMLComments(str) {
+    return str.replace(/\<\!\-\-*.*?\-\-\>\s*/g, '').trim();
+}
+console.log(replaceHTMLComments('<!--коммент1--> код без комментов <!--коммент2-->')); // код без комментов
+console.log(replaceHTMLComments('<!--к1--> код <!-- к2 --><!-- к3 --> без <!-- к4 --> комментов')); // код без комментов
+console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комментов')); // код без комментов
 
 /*
  * #3
