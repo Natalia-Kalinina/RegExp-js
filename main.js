@@ -41,13 +41,15 @@ console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комм�
  * С помощью test определите, что переданная строка заканчивается расширениями: jpg, jpeg, png.
  * Функция получает строку – имя файла, возвращает true или false.
  */
-
-// console.log(validateFileType('image.png')); // true
-// console.log(validateFileType('image.html')); // false
-// console.log(validateFileType('image.file.jpg')); // true
-// console.log(validateFileType('image.png.file')); // false
-// console.log(validateFileType('image.png.jpeg')); // true
-// console.log(validateFileType('image.pngjpeg')); // true
+function validateFileType(str) {
+    return (/\.(jpeg|png|jpg)$/).test(str)
+}
+console.log(validateFileType('image.png')); // true
+console.log(validateFileType('image.html')); // false
+console.log(validateFileType('image.file.jpg')); // true
+console.log(validateFileType('image.png.file')); // false
+console.log(validateFileType('image.png.jpeg')); // true
+console.log(validateFileType('image.pngjpeg')); // false
 
 /*
  * #4
@@ -58,6 +60,7 @@ console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комм�
  */
 
 // console.log(checkYear(1900)); // true
+
 // console.log(checkYear(2001)); // true
 // console.log(checkYear(2100)); // true
 // console.log(checkYear(1899)); // false
