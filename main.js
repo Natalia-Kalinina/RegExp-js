@@ -59,18 +59,21 @@ console.log(validateFileType('image.pngjpeg')); // false
  * Функция получает строку – год, возвращает true или false.
  */
 
-// console.log(checkYear(1900)); // true
+ function checkYear(str) {
+    return (/^[12](([09][0-9][0-9])|100)/g).test(str)
+ }
+console.log(checkYear(1900)); // true
 
-// console.log(checkYear(2001)); // true
-// console.log(checkYear(2100)); // true
-// console.log(checkYear(1899)); // false
-// console.log(checkYear(20)); // false
-// console.log(checkYear(200)); // false
-// console.log(checkYear(20000)); // false
-// console.log(checkYear('20000')); // false
-// console.log(checkYear(19)); // false
-// console.log(checkYear('19')); // false
-// console.log(checkYear(2101)); // false
+console.log(checkYear(2001)); // true
+console.log(checkYear(2100)); // true
+console.log(checkYear(1899)); // false
+console.log(checkYear(20)); // false
+console.log(checkYear(200)); // false
+console.log(checkYear(20000)); // false
+console.log(checkYear('20000')); // false
+console.log(checkYear(19)); // false
+console.log(checkYear('19')); // false
+console.log(checkYear(2101)); // false
 
 /*
  * #5
